@@ -5,7 +5,6 @@ pymongo==4.8.0
 motor==3.5.1 
 marshmallow==3.18.0 
 umongo==3.1.0 
-Heroku3 
 search_engine_parser 
 wget 
 aiofiles 
@@ -36,7 +35,7 @@ opencv-python-headless==4.7.0.68
  python-dotenv==0.21.1  
  speedtest==0.0.1  
  humanize==4.6.0  
- Pillow==9.4.0  
+ pillow
  psutil==5.9.4  
  NumPy  
  wheel  
