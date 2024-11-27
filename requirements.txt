@@ -3,6 +3,7 @@ https://codeload.github.com/Jisshubot/pyrogram/zip/refs/heads/dev
 tgcrypto 
 pymongo==4.8.0 
 motor==3.5.1 
+wheels
 marshmallow==3.18.0 
 umongo==3.1.0 
 git+https://github.com/Joelkb/cinemagoer 
