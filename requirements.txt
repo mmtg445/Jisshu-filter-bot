@@ -15,6 +15,7 @@ ffmpeg
 requests 
 aiohttp 
 telegraph 
+Pillow
 ujson 
 pyshorteners 
 datetime 
