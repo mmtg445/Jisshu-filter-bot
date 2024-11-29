@@ -1,5 +1,6 @@
 pyrofork==2.3.43 
 https://codeload.github.com/KurimuzonAkuma/pyrogram/zip/refs/heads/dev 
+colorama==0.4.6  # সর্বশেষ স্থিতিশীল ভার্সন
 tgcrypto 
 pymongo==4.8.0 
 motor==3.5.1 
