@@ -51,4 +51,5 @@ jinja2
 apscheduler 
 pyshorteners 
 pyromod 
-colorama
+coloramawheel
+wheel
