@@ -52,4 +52,3 @@ apscheduler
 pyshorteners 
 pyromod 
 coloramawheel
-wheel
