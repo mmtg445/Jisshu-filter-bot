@@ -1,6 +1,5 @@
 pyrofork==2.3.43 
 https://codeload.github.com/KurimuzonAkuma/pyrogram/zip/refs/heads/dev 
-coloramawheel
 tgcrypto 
 pymongo==4.8.0 
 motor==3.5.1 
@@ -16,7 +15,6 @@ ffmpeg
 requests 
 aiohttp 
 telegraph 
-Pillow
 ujson 
 pyshorteners 
 datetime 
@@ -26,7 +24,7 @@ python-math
 speedtest-cli 
 shortzy 
 fuzzywuzzy 
-wheel
+wheel 
 gunicorn==20.1.0 
 werkzeug==2.0.2 
 Flask 
@@ -51,4 +49,4 @@ jinja2
 apscheduler 
 pyshorteners 
 pyromod 
-coloramawheel
+colorama
