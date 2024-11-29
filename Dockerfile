@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libffi-dev \
     libssl-dev \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the application code to the working directory
@@ -17,7 +18,7 @@ COPY . /app/
 
 # Upgrade pip and install required Python packages
 RUN pip install --upgrade pip setuptools wheel \
-    && pip install -r requirements.txt
+    && pip install --no-cache-dir -r requirements.txt
 
 # Expose the application port
 EXPOSE 8080
