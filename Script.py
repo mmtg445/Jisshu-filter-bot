@@ -112,8 +112,8 @@ User - {}"""
 🍿 Title: {title}
 🎃 Genres: {genres}
 📆 Year: {release_date}
-⭐ Rating: {rating} / 10</b>
-® Join Us @RM_MoviesZ
+⭐ Rating: {rating} / 10
+® Join Us @RM_MoviesZ</b>
 """
 
     FILE_CAPTION = """<b>@RM_Movie_Flix {file_name}\n\n𝖩𝗈𝗂𝗇➥ 「<a href="https://t.me/RM_MoviesZ">𝙱𝚊𝚌𝚔𝚞𝚙 𝙲𝚑𝚊𝚗𝚗𝚎𝚕</a>」</b>"""
