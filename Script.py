@@ -107,11 +107,13 @@ User - {}"""
 🎁 ʀᴇǫᴜᴇꜱᴛ ᴍꜱɢ - <code>{}</code></b>"""  
    
     IMDB_TEMPLATE_TXT = """
-<b>🍿 Title: {title}
+<b>ʜᴇʏ {message.from_user.mention}, ʜᴇʀᴇ ɪꜱ ᴛʜᴇ ʀᴇꜱᴜʟᴛꜱ ꜰᴏʀ ʏᴏᴜʀ ǫᴜᴇʀʏ {search}.
+
+🍿 Title: {title}
 🎃 Genres: {genres}
 📆 Year: {release_date}
-⭐ Rating: {rating} / 10
-® Join Us @RM_MoviesZ</b>
+⭐ Rating: {rating} / 10</b>
+® Join Us @RM_MoviesZ
 """
 
     FILE_CAPTION = """<b>@RM_Movie_Flix {file_name}\n\n𝖩𝗈𝗂𝗇➥ 「<a href="https://t.me/RM_MoviesZ">𝙱𝚊𝚌𝚔𝚞𝚙 𝙲𝚑𝚊𝚗𝚗𝚎𝚕</a>」</b>"""
