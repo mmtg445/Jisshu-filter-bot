@@ -19,10 +19,10 @@ BOT_TOKEN = environ.get('BOT_TOKEN', '')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '6976744562 8102446291').split()]
-USERNAME = environ.get('USERNAME', "https://t.me/RahatVx") # ADMIN USERNAME
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002289024376'))
-MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/RM_Movie_Request')
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '1002267822942').split()]
+USERNAME = environ.get('USERNAME', "RahatVx") # ADMIN USERNAME
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002419150355'))
+MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/RM_Movie_Search')
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002267822942').split()]
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://rohanahamed75:gt4RXJZ1mUtOh4Xv@mmtg.0ong5.mongodb.net/?retryWrites=true&w=majority&appName=mmtg")
@@ -31,12 +31,12 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'My_Tg_files')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 #----------- There will be channel id add in all these ---------
-LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1002289024376'))  # set shortner log channel
+LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1002419150355'))  # set shortner log channel
 DELETE_CHANNELS = int(environ.get('DELETE_CHANNELS','0')) # The movie you upload in it will be deleted from the bot.
-LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002289024376'))
-auth_channel = environ.get('AUTH_CHANNEL', '1002238603343')
+LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002419150355'))
+auth_channel = environ.get('AUTH_CHANNEL', '-1002238603343')
 SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002470486707'))
-request_channel = environ.get('REQUEST_CHANNEL', '-1002289024376') # If anyone sends a request message to your bot, you will get it in this channel.
+request_channel = environ.get('REQUEST_CHANNEL', '-1002419150355') # If anyone sends a request message to your bot, you will get it in this channel.
 MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', 'https://t.me/RM_Movie_Flix')) # 
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/Rm_Support_Groups') #Support group link ( make sure bot is admin )
 #---------------------------------------------------------------
@@ -69,8 +69,8 @@ REQUEST_CHANNEL = int(request_channel) ifFalsest_channel and id_pattern.search(r
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-START_IMG = (environ.get('START_IMG', 'https://envs.sh/34V.jpg https://envs.sh/346.jpg')).split()
-FORCESUB_IMG = environ.get('FORCESUB_IMG', 'https://envs.sh/GW2.jpg')
+START_IMG = (environ.get('START_IMG', 'https://envs.sh/JcG.jpg https://envs.sh/JcL.jpg https://envs.sh/JcZ.jpg')).split()
+FORCESUB_IMG = environ.get('FORCESUB_IMG', 'https://envs.sh/JcL.jpg')
 REFER_PICS = (environ.get("REFER_PICS", "https://envs.sh/GW2.jpg")).split() 
 PAYPICS = (environ.get('PAYPICS', 'https://envs.sh/GW2.jpg')).split()
 SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://envs.sh/GW2.jpg'))
