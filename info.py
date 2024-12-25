@@ -25,7 +25,7 @@ MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/RM_Movie_Search
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002393540726 -1002348118344').split()]
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb://Rahat:IwpRDsvZeXAwSB0H@Rahat/?ssl=true&replicaSet=atlas-ltmin2-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Rahat")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Rahat:EGbbbvweNl6EFzf6@rahat.pizkp.mongodb.net/?retryWrites=true&w=majority&appName=Rahat")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Rahat")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'My_Tg_files')
 #---------------------------------------------------------------
