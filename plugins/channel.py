@@ -85,7 +85,7 @@ async def send_movie_updates(bot, file_name, caption, file_id):
 
 💿 <b>Quality:</b> {quality}
 
-✨ <blockquote>🔍 Looking for more movies? Join our Movie Search Group: <a href="https://t.me/RM_Movie_Search">https://t.me/RM_Movie_Search</a></blockquote>
+✨ <blockquote><a href="https://t.me/RM_Movie_Search">🔍 Looking for more movies? Join our Movie Search Group</a></blockquote>
 """
         search_movie = movie_name.replace(" ", '-')
         movie_update_channel = await db.movies_update_channel_id()    
