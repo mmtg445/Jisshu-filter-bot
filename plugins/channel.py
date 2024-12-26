@@ -1,14 +1,12 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from info import CHANNELS, MOVIE_UPDATE_CHANNEL, ADMINS , LOG_CHANNEL
+from info import CHANNELS, MOVIE_UPDATE_CHANNEL, ADMINS, LOG_CHANNEL
 from database.ia_filterdb import save_file, unpack_new_file_id
 from utils import get_poster, temp
 import re
 from database.users_chats_db import db
 
 processed_movies = set()
-media_filter = filters.document | filters.video
-
 media_filter = filters.document | filters.video
 
 @Client.on_message(filters.chat(CHANNELS) & media_filter)
@@ -31,8 +29,8 @@ async def get_imdb(file_name):
     return None
     
 async def movie_name_format(file_name):
-  filename = re.sub(r'http\S+', '', re.sub(r'@\w+|#\w+', '', file_name).replace('_', ' ').replace('[', '').replace(']', '').replace('(', '').replace(')', '').replace('{', '').replace('}', '').replace('.', ' ').replace('@', '').replace(':', '').replace(';', '').replace("'", '').replace('-', '').replace('!', '')).strip()
-  return filename
+    filename = re.sub(r'http\S+', '', re.sub(r'@\w+|#\w+', '', file_name).replace('_', ' ').replace('[', '').replace(']', '').replace('(', '').replace(')', '').replace('{', '').replace('}', '').replace('.', ' ').replace('@', '').replace(':', '').replace(';', '').replace("'", '').replace('-', '').replace('!', '')).strip()
+    return filename
 
 async def check_qualities(text, qualities: list):
     quality = []
@@ -56,20 +54,32 @@ async def send_movie_updates(bot, file_name, caption, file_id):
             if season:
                 season = season.group(1) if season else None       
                 file_name = file_name[:file_name.find(season) + 1]
-        qualities = ["#ORG", "#org", "#hdcam", "#HDCAM", "#HQ", "#hq", "#HDRip", "#hdrip", 
-                     "#camrip", "#WEB-DL" "#CAMRip", "#hdtc", "#predvd", "#DVDscr", "#dvdscr", 
-                     "#dvdrip", "#dvdscr", "#HDTC", "#dvdscreen", "#HDTS", "#hdts"]
-        quality = await check_qualities(caption, qualities) or "#HDRip"
+        
+        qualities = ["ORG", "org", "hdcam", "HDCAM", "HQ", "hq", "HDRip", "hdrip", 
+                     "camrip", "WEB-DL", "CAMRip", "hdtc", "predvd", "DVDscr", "dvdscr", 
+                     "dvdrip", "dvdscr", "HDTC", "dvdscreen", "HDTS", "hdts"]
+        
+        quality = await check_qualities(caption, qualities) or "HDRip"
+        quality = f"#{quality}"  # Adding the '#' prefix to the quality
+        
         language = ""
-        nb_languages = ["#Hindi", "#Bengali", "#English", "#Marathi", "#Tamil", "#Telugu", "#Malayalam", "#Kannada", "#Punjabi", "#Gujrati", "#Korean", "#Japanese", "#Bhojpuri", "#Dual", "#Multi"]    
+        nb_languages = ["Hindi", "Bengali", "English", "Marathi", "Tamil", "Telugu", 
+                        "Malayalam", "Kannada", "Punjabi", "Gujrati", "Korean", 
+                        "Japanese", "Bhojpuri", "Dual", "Multi"]    
+        
         for lang in nb_languages:
             if lang.lower() in caption.lower():
                 language += f"{lang}, "
+        
         language = language.strip(", ") or "Not Idea"
+        language = f"#{language}"  # Adding the '#' prefix to the language
+        
         movie_name = await movie_name_format(file_name)    
+        
         if movie_name in processed_movies:
             return 
         processed_movies.add(movie_name)    
+        
         poster_url = await get_imdb(movie_name)
         caption_message = f"""
 #Added ✅
@@ -100,5 +110,3 @@ async def send_movie_updates(bot, file_name, caption, file_id):
     except Exception as e:
         print('Failed to send movie update. Error - ', e)
         await bot.send_message(LOG_CHANNEL, f'Failed to send movie update. Error - {e}')
-    
-  
