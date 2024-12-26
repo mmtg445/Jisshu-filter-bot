@@ -62,17 +62,17 @@ async def send_movie_updates(bot, file_name, caption, file_id):
         quality = await check_qualities(caption, qualities) or "HDRip"
         quality = f"#{quality}"  # Adding the '#' prefix to the quality
         
-        language = []
+        language = ''
         nb_languages = ["Hindi", "Bengali", "English", "Marathi", "Tamil", "Telugu", 
                         "Malayalam", "Kannada", "Punjabi", "Gujrati", "Korean", 
                         "Japanese", "Bhojpuri", "Dual", "Multi"]    
         
         for lang in nb_languages:
             if lang.lower() in caption.lower():
-                language.append(lang)  # Collecting language without prefix here
+                language.append(f"#{lang}")  # Add '#' prefix to each found language
         
-        # Now prefixing each language with '#'
-        language_str = ", ".join(f"#{lang}" for lang in language) if language else "Not Idea"
+        language_str = ", ".join(language) if language else "Not Idea"  # Join the languages into a single string
+
         movie_name = await movie_name_format(file_name)    
         
         if movie_name in processed_movies:
