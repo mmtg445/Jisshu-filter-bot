@@ -62,7 +62,7 @@ async def send_movie_updates(bot, file_name, caption, file_id):
         quality = await check_qualities(caption, qualities) or "HDRip"
         quality = f"#{quality}"  # Adding the '#' prefix to the quality
         
-        language = ""
+        language = []
         nb_languages = ["Hindi", "Bengali", "English", "Marathi", "Tamil", "Telugu", 
                         "Malayalam", "Kannada", "Punjabi", "Gujrati", "Korean", 
                         "Japanese", "Bhojpuri", "Dual", "Multi"]    
