@@ -61,12 +61,12 @@ async def send_movie_updates(bot, file_name, caption, file_id):
             if season:
                 season = season.group(1) if season else None       
                 file_name = file_name[:file_name.find(season) + 1]
-        qualities = ["ORG", "org", "hdcam", "HDCAM", "HQ", "hq", "HDRip", "hdrip", 
-                     "camrip", "WEB-DL" "CAMRip", "hdtc", "predvd", "DVDscr", "dvdscr", 
-                     "dvdrip", "dvdscr", "HDTC", "dvdscreen", "HDTS", "hdts"]
-        quality = await check_qualities(caption, qualities) or "HDRip"
+        qualities = ["#ORG", "#org", "#hdcam", "#HDCAM", "#HQ", "#hq", "#HDRip", "#hdrip", 
+                     "#camrip", "#WEB-DL" "#CAMRip", "#hdtc", "#predvd", "#DVDscr", "#dvdscr", 
+                     "#dvdrip", "#dvdscr", "#HDTC", "#dvdscreen", "#HDTS", "#hdts"]
+        quality = await check_qualities(caption, qualities) or "#HDRip"
         language = ""
-        nb_languages = ["Hindi", "Bengali", "English", "Marathi", "Tamil", "Telugu", "Malayalam", "Kannada", "Punjabi", "Gujrati", "Korean", "Japanese", "Bhojpuri", "Dual", "Multi"]    
+        nb_languages = ["#Hindi", "#Bengali", "#English", "#Marathi", "#Tamil", "#Telugu", "#Malayalam", "#Kannada", "#Punjabi", "#Gujrati", "#Korean", "#Japanese", "#Bhojpuri", "#Dual", "#Multi"]    
         for lang in nb_languages:
             if lang.lower() in caption.lower():
                 language += f"{lang}, "
@@ -76,7 +76,17 @@ async def send_movie_updates(bot, file_name, caption, file_id):
             return 
         processed_movies.add(movie_name)    
         poster_url = await get_imdb(movie_name)
-        caption_message = f"#Added ✅\n\n🍿 Name:- <code>{movie_name}</code>\n\n🗣️ Language:- #{language}\n\n💿 Quality:- {quality}\n\n<blockquote>© Join Us : @RM_Movie_Flix<blockquote>" 
+        caption_message = f"""
+#Added ✅
+
+🍿 <b>Movie Name:</b> <code>{movie_name}</code>
+
+🗣️ <b>Language:</b> {language}
+
+💿 <b>Quality:</b> {quality}
+
+✨ <blockquote><a href="https://t.me/RM_Movie_Search">🔍 Looking for more movies? Join our Movie Search Group</a></blockquote>
+"""
         search_movie = movie_name.replace(" ", '-')
         movie_update_channel = await db.movies_update_channel_id()    
         btn = [[
