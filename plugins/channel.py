@@ -71,8 +71,8 @@ async def send_movie_updates(bot, file_name, caption, file_id):
             if lang.lower() in caption.lower():
                 language.append(f"#{lang}")  # Add '#' prefix to each found language
         
+        # Join languages directly into a string without brackets or quotes
         language_str = ", ".join(language) if language else "Not Idea"  # Join the languages into a single string
-
         movie_name = await movie_name_format(file_name)    
         
         if movie_name in processed_movies:
