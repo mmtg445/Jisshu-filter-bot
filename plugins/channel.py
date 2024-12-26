@@ -1,8 +1,3 @@
-# Credit - JISSHU BOTS
-# Modified By NBBotz
-# Some Codes Are Taken From A GitHub Repository And We Forgot His Name
-# Base Code Bishal
-
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from info import CHANNELS, MOVIE_UPDATE_CHANNEL, ADMINS , LOG_CHANNEL
@@ -61,12 +56,12 @@ async def send_movie_updates(bot, file_name, caption, file_id):
             if season:
                 season = season.group(1) if season else None       
                 file_name = file_name[:file_name.find(season) + 1]
-        qualities = ["ORG", "org", "hdcam", "HDCAM", "HQ", "hq", "HDRip", "hdrip", 
-                     "camrip", "WEB-DL" "CAMRip", "hdtc", "predvd", "DVDscr", "dvdscr", 
-                     "dvdrip", "dvdscr", "HDTC", "dvdscreen", "HDTS", "hdts"]
-        quality = await check_qualities(caption, qualities) or "HDRip"
+        qualities = ["#ORG", "#org", "#hdcam", "#HDCAM", "#HQ", "#hq", "#HDRip", "#hdrip", 
+                     "#camrip", "#WEB-DL" "#CAMRip", "#hdtc", "#predvd", "#DVDscr", "#dvdscr", 
+                     "#dvdrip", "#dvdscr", "#HDTC", "#dvdscreen", "#HDTS", "#hdts"]
+        quality = await check_qualities(caption, qualities) or "#HDRip"
         language = ""
-        nb_languages = ["Hindi", "Bengali", "English", "Marathi", "Tamil", "Telugu", "Malayalam", "Kannada", "Punjabi", "Gujrati", "Korean", "Japanese", "Bhojpuri", "Dual", "Multi"]    
+        nb_languages = ["#Hindi", "#Bengali", "#English", "#Marathi", "#Tamil", "#Telugu", "#Malayalam", "#Kannada", "#Punjabi", "#Gujrati", "#Korean", "#Japanese", "#Bhojpuri", "#Dual", "#Multi"]    
         for lang in nb_languages:
             if lang.lower() in caption.lower():
                 language += f"{lang}, "
@@ -81,7 +76,7 @@ async def send_movie_updates(bot, file_name, caption, file_id):
 
 🍿 <b>Movie Name:</b> <code>{movie_name}</code>
 
-🗣️ <b>Language:</b> #{language}
+🗣️ <b>Language:</b> {language}
 
 💿 <b>Quality:</b> {quality}
 
@@ -99,7 +94,7 @@ async def send_movie_updates(bot, file_name, caption, file_id):
             await bot.send_photo(movie_update_channel if movie_update_channel else MOVIE_UPDATE_CHANNEL, 
                                  photo=poster_url, caption=caption_message, reply_markup=reply_markup)
         else:
-            no_poster = "https://telegra.ph/file/88d845b4f8a024a71465d.jpg"
+            no_poster = "https://envs.sh/Jau.jpg"
             await bot.send_photo(movie_update_channel if movie_update_channel else MOVIE_UPDATE_CHANNEL, 
                                  photo=no_poster, caption=caption_message, reply_markup=reply_markup)  
     except Exception as e:
